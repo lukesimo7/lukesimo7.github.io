@@ -19,7 +19,6 @@
       --border:      rgba(255,255,255,0.06);
       --border-hi:   rgba(99,202,183,0.22);
 
-      /* Signature: warm seafoam — distinct from typical teal */
       --green:       #63cab7;
       --green-soft:  rgba(99,202,183,0.10);
       --green-glow:  rgba(99,202,183,0.06);
@@ -97,7 +96,6 @@
       justify-content: space-between;
     }
 
-    /* Name + tagline */
     .s-name {
       font-size: 2.4rem;
       font-weight: 700;
@@ -122,7 +120,6 @@
       line-height: 1.8;
     }
 
-    /* Nav */
     .s-nav {
       list-style: none;
       margin-top: 3.5rem;
@@ -162,7 +159,6 @@
       width: 3rem;
     }
 
-    /* Socials */
     .s-socials {
       display: flex;
       gap: 1.1rem;
@@ -188,7 +184,6 @@
       padding: 5.5rem 0 6rem;
     }
 
-    /* Section wrapper */
     .sect {
       margin-bottom: 7rem;
       scroll-margin-top: 5rem;
@@ -223,7 +218,6 @@
       margin-bottom: 1rem;
     }
     .about-body p:last-child { margin-bottom: 0; }
-
     .about-body strong { color: var(--text-hi); font-weight: 600; }
 
     .about-body a {
@@ -236,7 +230,6 @@
       border-color: var(--green);
     }
 
-    /* Skill chips */
     .chips {
       display: flex;
       flex-wrap: wrap;
@@ -257,7 +250,7 @@
     }
 
     /* ═══════════════════════════════════════════════
-       FEATURED PROJECT — Bishop Auckland (hero card)
+       FEATURED PROJECT
     ═══════════════════════════════════════════════ */
     .featured-card {
       background: var(--bg-card);
@@ -283,7 +276,6 @@
       overflow: hidden;
     }
 
-    /* Decorative browser chrome inside the featured card */
     .browser-chrome {
       position: absolute;
       inset: 16px;
@@ -303,10 +295,7 @@
       gap: 5px;
     }
 
-    .b-dot {
-      width: 7px; height: 7px;
-      border-radius: 50%;
-    }
+    .b-dot { width: 7px; height: 7px; border-radius: 50%; }
     .b-dot:nth-child(1) { background: #ff5f57; }
     .b-dot:nth-child(2) { background: #febc2e; }
     .b-dot:nth-child(3) { background: #28c840; }
@@ -329,11 +318,7 @@
       gap: 7px;
     }
 
-    .bc-line {
-      height: 7px;
-      border-radius: 3px;
-      background: rgba(99,202,183,0.15);
-    }
+    .bc-line { height: 7px; border-radius: 3px; background: rgba(99,202,183,0.15); }
     .bc-line.short  { width: 45%; }
     .bc-line.medium { width: 70%; }
     .bc-line.long   { width: 90%; }
@@ -367,9 +352,7 @@
       text-transform: uppercase;
     }
 
-    .featured-body {
-      padding: 1.75rem;
-    }
+    .featured-body { padding: 1.75rem; }
 
     .featured-kicker {
       font-family: var(--font-mono);
@@ -416,11 +399,7 @@
       margin-bottom: 1.25rem;
     }
 
-    .feat-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.4rem;
-    }
+    .feat-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
 
     .feat-tag {
       font-family: var(--font-mono);
@@ -436,11 +415,7 @@
     /* ═══════════════════════════════════════════════
        OTHER PROJECT CARDS
     ═══════════════════════════════════════════════ */
-    .proj-list {
-      display: flex;
-      flex-direction: column;
-      gap: 0.4rem;
-    }
+    .proj-list { display: flex; flex-direction: column; gap: 0.4rem; }
 
     .proj-card {
       display: grid;
@@ -480,7 +455,6 @@
       gap: 0.35rem;
       transition: color 0.2s;
     }
-
     .proj-card:hover .proj-title { color: var(--green); }
 
     .proj-arrow {
@@ -491,10 +465,7 @@
       transition: opacity 0.2s, transform 0.2s;
       flex-shrink: 0;
     }
-    .proj-card:hover .proj-arrow {
-      opacity: 1;
-      transform: translate(0, 0);
-    }
+    .proj-card:hover .proj-arrow { opacity: 1; transform: translate(0, 0); }
 
     .proj-desc {
       font-size: 0.85rem;
@@ -503,11 +474,7 @@
       margin-bottom: 0.75rem;
     }
 
-    .proj-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.35rem;
-    }
+    .proj-tags { display: flex; flex-wrap: wrap; gap: 0.35rem; }
 
     .proj-tag {
       font-family: var(--font-mono);
@@ -587,11 +554,7 @@
     }
     .exp-desc strong { color: var(--text-hi); font-weight: 600; }
 
-    .exp-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.35rem;
-    }
+    .exp-tags { display: flex; flex-wrap: wrap; gap: 0.35rem; }
 
     .exp-tag {
       font-family: var(--font-mono);
@@ -604,7 +567,6 @@
       letter-spacing: 0.04em;
     }
 
-    /* Education block */
     .edu-block {
       margin-top: 0.4rem;
       padding: 1.25rem 1.4rem;
@@ -625,28 +587,17 @@
       color: var(--text-hi);
       margin-bottom: 0.2rem;
     }
-    .edu-school {
-      font-size: 0.82rem;
-      color: var(--text-lo);
-    }
-    .edu-school a {
-      color: var(--text-lo);
-      transition: color 0.2s;
-    }
+    .edu-school { font-size: 0.82rem; color: var(--text-lo); }
+    .edu-school a { color: var(--text-lo); transition: color 0.2s; }
     .edu-school a:hover { color: var(--green); }
 
-    /* inline link style */
     .text-link {
       color: var(--text-hi);
       border-bottom: 1px solid var(--border-hi);
       transition: color 0.2s, border-color 0.2s;
     }
-    .text-link:hover {
-      color: var(--green);
-      border-color: var(--green);
-    }
+    .text-link:hover { color: var(--green); border-color: var(--green); }
 
-    /* more link */
     .more-link {
       display: inline-flex;
       align-items: center;
@@ -686,10 +637,7 @@
       color: var(--text-lo);
       line-height: 1.85;
     }
-    .foot a {
-      color: var(--text);
-      transition: color 0.2s;
-    }
+    .foot a { color: var(--text); transition: color 0.2s; }
     .foot a:hover { color: var(--green); }
 
     /* ═══════════════════════════════════════════════
@@ -723,6 +671,274 @@
       .edu-block { grid-template-columns: 1fr; gap: 0.5rem; }
       .exp-period { padding-top: 0; }
     }
+
+    /* ═══════════════════════════════════════════════
+       AI CHATBOT
+    ═══════════════════════════════════════════════ */
+    .chat-toggle {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      z-index: 9999;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      border: 1px solid var(--border-hi);
+      background: var(--bg-card);
+      color: var(--green);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.5), 0 0 0 1px rgba(99,202,183,0.08);
+      transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+    }
+    .chat-toggle:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.6), 0 0 20px rgba(99,202,183,0.12);
+      background: var(--bg-raised);
+    }
+    .chat-toggle svg { width: 24px; height: 24px; }
+    .chat-toggle .icon-close { display: none; }
+    .chat-toggle.open .icon-chat { display: none; }
+    .chat-toggle.open .icon-close { display: block; }
+
+    .chat-toggle::after {
+      content: '';
+      position: absolute;
+      top: -2px;
+      right: -2px;
+      width: 14px;
+      height: 14px;
+      background: var(--green);
+      border-radius: 50%;
+      border: 2.5px solid var(--bg);
+      animation: pulse-dot 2s ease-in-out infinite;
+    }
+    .chat-toggle.open::after,
+    .chat-toggle.seen::after { display: none; }
+
+    @keyframes pulse-dot {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.25); opacity: 0.7; }
+    }
+
+    .chat-window {
+      position: fixed;
+      bottom: 100px;
+      right: 28px;
+      z-index: 9998;
+      width: 400px;
+      max-height: 560px;
+      border-radius: 16px;
+      border: 1px solid var(--border-hi);
+      background: var(--bg);
+      box-shadow: 0 12px 64px rgba(0,0,0,0.6), 0 0 0 1px rgba(99,202,183,0.06);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      opacity: 0;
+      transform: translateY(16px) scale(0.96);
+      pointer-events: none;
+      transition: opacity 0.25s ease, transform 0.25s ease;
+    }
+    .chat-window.open {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+      pointer-events: auto;
+    }
+
+    .chat-header {
+      padding: 18px 22px;
+      background: var(--bg-raised);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex-shrink: 0;
+    }
+
+    .chat-avatar {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: var(--green-soft);
+      border: 1px solid var(--border-hi);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-sans);
+      font-weight: 700;
+      font-size: 14px;
+      color: var(--green);
+      flex-shrink: 0;
+    }
+
+    .chat-header-info h3 {
+      font-family: var(--font-sans);
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--text-hi);
+      letter-spacing: -0.01em;
+    }
+    .chat-header-info p {
+      font-family: var(--font-mono);
+      font-size: 0.6rem;
+      color: var(--green);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-top: 2px;
+    }
+
+    .chat-messages {
+      flex: 1;
+      overflow-y: auto;
+      padding: 20px 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      min-height: 300px;
+      max-height: 360px;
+    }
+    .chat-messages::-webkit-scrollbar { width: 3px; }
+    .chat-messages::-webkit-scrollbar-track { background: transparent; }
+    .chat-messages::-webkit-scrollbar-thumb { background: var(--green); border-radius: 2px; }
+
+    .msg {
+      max-width: 85%;
+      font-family: var(--font-sans);
+      font-size: 0.84rem;
+      line-height: 1.7;
+      animation: msg-in 0.3s ease;
+    }
+
+    @keyframes msg-in {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: none; }
+    }
+
+    .msg.bot {
+      align-self: flex-start;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 12px 16px;
+      border-radius: 14px 14px 14px 4px;
+    }
+    .msg.bot strong { color: var(--text-hi); font-weight: 600; }
+    .msg.bot a { color: var(--green); text-decoration: underline; text-underline-offset: 2px; }
+
+    .msg.user {
+      align-self: flex-end;
+      background: var(--green-soft);
+      border: 1px solid var(--border-hi);
+      color: var(--text-hi);
+      padding: 12px 16px;
+      border-radius: 14px 14px 4px 14px;
+    }
+
+    .typing {
+      align-self: flex-start;
+      display: flex;
+      gap: 5px;
+      padding: 14px 18px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 14px 14px 14px 4px;
+      animation: msg-in 0.3s ease;
+    }
+    .typing span {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--text-lo);
+      animation: bounce 1.2s ease-in-out infinite;
+    }
+    .typing span:nth-child(2) { animation-delay: 0.15s; }
+    .typing span:nth-child(3) { animation-delay: 0.3s; }
+
+    @keyframes bounce {
+      0%, 60%, 100% { transform: translateY(0); opacity: 0.4; }
+      30% { transform: translateY(-6px); opacity: 1; }
+    }
+
+    .suggestions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 4px;
+    }
+    .suggestion-chip {
+      font-family: var(--font-mono);
+      font-size: 0.6rem;
+      color: var(--green);
+      background: var(--green-soft);
+      border: 1px solid var(--border-hi);
+      padding: 5px 11px;
+      border-radius: 20px;
+      cursor: pointer;
+      letter-spacing: 0.02em;
+      transition: background 0.2s, color 0.2s;
+      white-space: nowrap;
+    }
+    .suggestion-chip:hover {
+      background: rgba(99,202,183,0.2);
+      color: var(--text-hi);
+    }
+
+    .chat-input-area {
+      padding: 14px 18px;
+      background: var(--bg-raised);
+      border-top: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-shrink: 0;
+    }
+
+    .chat-input {
+      flex: 1;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 10px 14px;
+      font-family: var(--font-sans);
+      font-size: 0.84rem;
+      color: var(--text-hi);
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .chat-input::placeholder { color: var(--text-lo); }
+    .chat-input:focus { border-color: var(--border-hi); }
+
+    .chat-send {
+      width: 38px;
+      height: 38px;
+      border-radius: 8px;
+      border: 1px solid var(--border-hi);
+      background: var(--green-soft);
+      color: var(--green);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s, transform 0.2s;
+      flex-shrink: 0;
+    }
+    .chat-send:hover { background: rgba(99,202,183,0.2); transform: scale(1.05); }
+    .chat-send:disabled { opacity: 0.35; cursor: not-allowed; transform: none; }
+    .chat-send svg { width: 16px; height: 16px; }
+
+    @media (max-width: 500px) {
+      .chat-window {
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        max-height: 100dvh;
+        border-radius: 16px 16px 0 0;
+      }
+      .chat-toggle { bottom: 18px; right: 18px; }
+    }
   </style>
 </head>
 <body>
@@ -750,19 +966,15 @@
     </div>
 
     <div class="s-socials">
-      <!-- GitHub -->
       <a href="https://github.com/lukesimo7" target="_blank" aria-label="GitHub">
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
       </a>
-      <!-- LinkedIn -->
       <a href="https://www.linkedin.com/in/lukesimpson04/" target="_blank" aria-label="LinkedIn">
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
       </a>
-      <!-- Email -->
-      <a href="/cdn-cgi/l/email-protection#b1ddc4dad4c2d8dcde86f1c8d0d9dede9fd2dedc" aria-label="Email">
+      <a href="mailto:lukesimo7@yahoo.com" aria-label="Email">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
       </a>
-      <!-- Live site -->
       <a href="https://bishopaucklandartnostalgia.com/" target="_blank" aria-label="Live portfolio site">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
       </a>
@@ -819,7 +1031,6 @@
     <section id="projects" class="sect">
       <div class="sect-label"><span>Projects</span></div>
 
-      <!-- ★ FEATURED: Bishop Auckland -->
       <div class="featured-card reveal">
         <div class="featured-img">
           <div class="browser-chrome">
@@ -871,7 +1082,6 @@
         </div>
       </div>
 
-      <!-- Other projects -->
       <div class="proj-list">
 
         <div class="proj-card reveal">
@@ -909,25 +1119,25 @@
           </div>
         </div>
 
-<div class="proj-card reveal">
-  <div class="proj-num">AI&nbsp;Web&nbsp;App<br/>Personal project</div>
-  <div>
-    <div class="proj-title">
-      AI UX Critique Tool
-      <span class="proj-arrow">↗</span>
-    </div>
-    <p class="proj-desc">Upload any UI screenshot and receive an instant, structured heuristic evaluation powered by Claude. The tool analyses interfaces against Nielsen's 10 Usability Heuristics — flagging issues by severity (critical, major, minor) and surfacing actionable recommendations for each finding.</p>
-    <p class="proj-desc">Built to bridge my UX research background with hands-on AI integration. Combines multimodal vision input, structured JSON outputs from the Claude API, and a clean React interface designed around the critique workflow itself.</p>
-    <div class="proj-tags">
-      <span class="proj-tag">React</span>
-      <span class="proj-tag">TypeScript</span>
-      <span class="proj-tag">Claude API</span>
-      <span class="proj-tag">Multimodal AI</span>
-      <span class="proj-tag">UX Heuristics</span>
-      <span class="proj-tag">REST APIs</span>
-    </div>
-  </div>
-</div>
+        <div class="proj-card reveal">
+          <div class="proj-num">AI&nbsp;Web&nbsp;App<br/>Personal project</div>
+          <div>
+            <div class="proj-title">
+              AI UX Critique Tool
+              <span class="proj-arrow">↗</span>
+            </div>
+            <p class="proj-desc">Upload any UI screenshot and receive an instant, structured heuristic evaluation powered by Claude. The tool analyses interfaces against Nielsen's 10 Usability Heuristics — flagging issues by severity (critical, major, minor) and surfacing actionable recommendations for each finding.</p>
+            <p class="proj-desc">Built to bridge my UX research background with hands-on AI integration. Combines multimodal vision input, structured JSON outputs from the Claude API, and a clean React interface designed around the critique workflow itself.</p>
+            <div class="proj-tags">
+              <span class="proj-tag">React</span>
+              <span class="proj-tag">TypeScript</span>
+              <span class="proj-tag">Claude API</span>
+              <span class="proj-tag">Multimodal AI</span>
+              <span class="proj-tag">UX Heuristics</span>
+              <span class="proj-tag">REST APIs</span>
+            </div>
+          </div>
+        </div>
 
         <a href="https://readyfreshltd.co.uk" target="_blank" class="proj-card reveal">
           <div class="proj-num">Client&nbsp;Site<br/>Live</div>
@@ -1008,7 +1218,6 @@
         </div>
       </div>
 
-      <!-- Education -->
       <div class="edu-block reveal">
         <div class="exp-period">2022<br/>— 2025</div>
         <div>
@@ -1056,7 +1265,53 @@
   </main>
 </div><!-- /page -->
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+
+<!-- ════════════════════════════════════════════════
+     AI CHATBOT
+════════════════════════════════════════════════ -->
+<button class="chat-toggle" id="chatToggle" aria-label="Open chat">
+  <svg class="icon-chat" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+  </svg>
+  <svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+  </svg>
+</button>
+
+<div class="chat-window" id="chatWindow">
+  <div class="chat-header">
+    <div class="chat-avatar">LS</div>
+    <div class="chat-header-info">
+      <h3>Ask about Luke</h3>
+      <p>AI-powered · based on my portfolio & CV</p>
+    </div>
+  </div>
+
+  <div class="chat-messages" id="chatMessages">
+    <div class="msg bot">
+      Hey! I'm an AI assistant trained on Luke's portfolio and CV. Ask me anything — his skills, projects, experience, or how to get in touch.
+    </div>
+    <div class="suggestions" id="suggestions">
+      <span class="suggestion-chip" data-q="What tech stack does Luke use?">Tech stack</span>
+      <span class="suggestion-chip" data-q="Tell me about Luke's projects">Projects</span>
+      <span class="suggestion-chip" data-q="What is Luke's work experience?">Experience</span>
+      <span class="suggestion-chip" data-q="How can I contact Luke?">Contact</span>
+      <span class="suggestion-chip" data-q="What did Luke study at university?">Education</span>
+    </div>
+  </div>
+
+  <div class="chat-input-area">
+    <input class="chat-input" id="chatInput" type="text" placeholder="Ask about Luke's skills, projects…" autocomplete="off"/>
+    <button class="chat-send" id="chatSend" aria-label="Send message">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/>
+      </svg>
+    </button>
+  </div>
+</div>
+
+
+<script>
 /* ── Cursor spotlight ── */
 document.addEventListener('mousemove', e => {
   document.getElementById('glow').style.cssText =
@@ -1092,6 +1347,183 @@ const navIO = new IntersectionObserver(entries => {
 }, { rootMargin: '-35% 0px -55% 0px' });
 
 sections.forEach(s => navIO.observe(s));
+
+
+/* ═══════════════════════════════════════════════
+   AI CHATBOT ENGINE
+═══════════════════════════════════════════════ */
+const LUKE_CONTEXT = `You are a friendly, concise AI assistant embedded in Luke Simpson's portfolio website. Answer questions ONLY about Luke based on the information below. Keep answers short (2-4 sentences max) and conversational. Use markdown-style bold (**text**) sparingly for emphasis. If someone asks something not covered below, say you don't have that info and suggest they email Luke at lukesimo7@yahoo.com.
+
+---
+ABOUT:
+- Name: Luke Simpson
+- Role: Front-End Web Developer
+- Location: Newcastle upon Tyne, UK
+- From: Bishop Auckland, County Durham
+- Open to: Front-end roles, full-stack positions, remote or hybrid
+- Email: lukesimo7@yahoo.com
+- GitHub: github.com/lukesimo7
+- LinkedIn: linkedin.com/in/lukesimpson04/
+- Personal trait: Product mindset — always asks "what does the user actually need?"
+
+SKILLS & TECHNOLOGIES:
+Frontend: HTML5, CSS3, JavaScript, TypeScript, React, Vue, Next.js, Nuxt.js
+Backend: PHP, Python, MySQL, REST APIs
+Tools: Git & CI/CD, Figma, Umbraco CMS, Netlify, Google Sheets API
+Specialties: Accessibility (WCAG), responsive design, design systems, UX research, API integration
+
+CURRENT ROLE:
+Digital & Front-End Developer at Newcastle University Students' Union (Jul 2025 – Present)
+- Designs and maintains large-scale sections of the SU website inside a PHP-based CMS (Umbraco)
+- Delivers accessible, data-driven features across Support & Advice Hub, Volunteering, and Discover Newcastle sections
+- Enhances performance, usability, and brand consistency
+- Owns features end-to-end from development through release
+- Collaborates closely with product, design, and content teams
+- Production sites used by thousands of students daily
+- Tech: PHP, HTML/CSS, JavaScript, React, API Integration, Accessibility, CMS
+
+PREVIOUS ROLES:
+- Back of House Team Member, Nando's, Newcastle (Apr 2023 – Jun 2025): Fast-paced kitchen. Strict quality/consistency standards. Developed attention to detail, time management under pressure, clear team communication.
+- Customer Service Assistant, Asda, Bishop Auckland (Mar 2021 – Jan 2022): High-volume retail, checkout and shop floor. Communication, adaptability, customer-first mindset.
+
+EDUCATION:
+BSc Computer Science — 2:1, Newcastle University (2022–2025)
+Dissertation: Human-centred UX research project — 52 participants, think-aloud evaluations, heuristic reviews — resulting in a high-fidelity Figma prototype for a redesigned sleep-tracking app called "Nest".
+
+PROJECTS:
+1. Bishop Auckland Art Nostalgia (FEATURED, Live at bishopaucklandartnostalgia.com)
+   Full art portfolio website for his father's painting hobby. Responsive image gallery, custom commission form with Google Sheets integration, contact integration, visual storytelling, payment iconography, fully accessible. No framework — pure HTML, CSS, JS. Full front-end lifecycle: Figma design, semantic HTML, hand-crafted CSS, progressive enhancement, real-world form handling. Tech: HTML5, CSS3, JavaScript, Google Sheets API, Figma, Accessibility, Responsive Design.
+
+2. Nest — Sleep App Redesign (UX Research Dissertation)
+   Human-centred UX study with 52 participants. Surveys, user interviews, personas, journey maps, high-fidelity Figma prototype. Guided by Schneiderman's Golden Rules, Hick's Law, Fitts' Law, Miller's Law. Evaluated with heuristic review and think-aloud walkthroughs. Tech: Figma, UX Research, Prototyping, HCI, User Testing.
+
+3. Collaborative UX Storyboarding Tool (Team Project)
+   Real-time collaborative storyboarding tool for UX designers, HCI practitioners, students. Template libraries, customisable assets, group editing. Informed by user research, Hierarchical Task Analysis, heuristic evaluation. Tech: Figma, UX Design, HTA, Usability Testing.
+
+4. AI UX Critique Tool (Personal Project)
+   Upload a UI screenshot, get instant structured heuristic evaluation powered by Claude. Analyses against Nielsen's 10 Usability Heuristics, flags issues by severity (critical/major/minor), surfaces actionable recommendations. Bridges UX research background with AI integration. Multimodal vision input, structured JSON outputs, clean React interface. Tech: React, TypeScript, Claude API, Multimodal AI, UX Heuristics, REST APIs.
+
+5. Ready Fresh Ltd (Client Site, Live at readyfreshltd.co.uk)
+   Business website for a fresh produce supplier in the North East. Responsive multi-section layout, produce showcase, staff section, contact form with Netlify Forms, scrolling marquee. Deployed on Netlify with custom domain. Tech: HTML5, CSS3, JavaScript, Netlify, Netlify Forms, Responsive Design, Client Work.
+
+WHAT MAKES LUKE STAND OUT:
+- Combines strong front-end craft with UX research knowledge
+- Comfortable across the full stack despite front-end focus
+- Owns features end-to-end in a professional team environment
+- Has shipped real production sites (both personal projects and client work)
+- Academic foundation in HCI and user-centred design
+- Always learning new tools and technologies
+---`;
+
+const chatToggle = document.getElementById('chatToggle');
+const chatWindow = document.getElementById('chatWindow');
+const chatMessages = document.getElementById('chatMessages');
+const chatInput = document.getElementById('chatInput');
+const chatSend = document.getElementById('chatSend');
+const suggestionsEl = document.getElementById('suggestions');
+
+let conversationHistory = [];
+let isLoading = false;
+
+chatToggle.addEventListener('click', () => {
+  const isOpen = chatWindow.classList.toggle('open');
+  chatToggle.classList.toggle('open', isOpen);
+  chatToggle.classList.add('seen');
+  if (isOpen) chatInput.focus();
+});
+
+suggestionsEl.addEventListener('click', e => {
+  const chip = e.target.closest('.suggestion-chip');
+  if (chip) sendMessage(chip.dataset.q);
+});
+
+chatInput.addEventListener('keydown', e => {
+  if (e.key === 'Enter' && !e.shiftKey) {
+    e.preventDefault();
+    sendMessage(chatInput.value);
+  }
+});
+chatSend.addEventListener('click', () => sendMessage(chatInput.value));
+
+function sendMessage(text) {
+  text = text.trim();
+  if (!text || isLoading) return;
+
+  if (suggestionsEl) suggestionsEl.style.display = 'none';
+
+  appendMsg(text, 'user');
+  chatInput.value = '';
+  chatInput.focus();
+
+  conversationHistory.push({ role: 'user', content: text });
+  callClaude();
+}
+
+function appendMsg(html, type) {
+  const div = document.createElement('div');
+  div.className = `msg ${type}`;
+  div.innerHTML = html;
+  chatMessages.appendChild(div);
+  chatMessages.scrollTop = chatMessages.scrollHeight;
+  return div;
+}
+
+function showTyping() {
+  const div = document.createElement('div');
+  div.className = 'typing';
+  div.id = 'typing-indicator';
+  div.innerHTML = '<span></span><span></span><span></span>';
+  chatMessages.appendChild(div);
+  chatMessages.scrollTop = chatMessages.scrollHeight;
+}
+function hideTyping() {
+  const el = document.getElementById('typing-indicator');
+  if (el) el.remove();
+}
+
+async function callClaude() {
+  isLoading = true;
+  chatSend.disabled = true;
+  showTyping();
+
+  try {
+    const res = await fetch('https://api.anthropic.com/v1/messages', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        model: 'claude-sonnet-4-20250514',
+        max_tokens: 1000,
+        system: LUKE_CONTEXT,
+        messages: conversationHistory
+      })
+    });
+
+    const data = await res.json();
+    hideTyping();
+
+    if (data.content && data.content.length > 0) {
+      const reply = data.content
+        .filter(b => b.type === 'text')
+        .map(b => b.text)
+        .join('\n');
+
+      const formatted = reply
+        .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+        .replace(/\n/g, '<br/>');
+
+      appendMsg(formatted, 'bot');
+      conversationHistory.push({ role: 'assistant', content: reply });
+    } else if (data.error) {
+      appendMsg(`Sorry, I hit an error: ${data.error.message}. Try again in a moment.`, 'bot');
+    }
+  } catch (err) {
+    hideTyping();
+    appendMsg("Sorry, I couldn't connect right now. Please try again or email Luke directly at <a href='mailto:lukesimo7@yahoo.com'>lukesimo7@yahoo.com</a>.", 'bot');
+  }
+
+  isLoading = false;
+  chatSend.disabled = false;
+}
 </script>
 
 </body>
