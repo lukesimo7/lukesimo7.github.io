@@ -1352,78 +1352,219 @@ sections.forEach(s => navIO.observe(s));
 /* ═══════════════════════════════════════════════
    AI CHATBOT ENGINE
 ═══════════════════════════════════════════════ */
-const LUKE_CONTEXT = `You are a friendly, concise AI assistant embedded in Luke Simpson's portfolio website. Answer questions ONLY about Luke based on the information below. Keep answers short (2-4 sentences max) and conversational. Use markdown-style bold (**text**) sparingly for emphasis. If someone asks something not covered below, say you don't have that info and suggest they email Luke at lukesimo7@yahoo.com.
+/* ═══════════════════════════════════════════════
+   OFFLINE KNOWLEDGE-BASE CHATBOT
+   No API key needed — works on GitHub Pages
+═══════════════════════════════════════════════ */
 
----
-ABOUT:
-- Name: Luke Simpson
-- Role: Front-End Web Developer
-- Location: Newcastle upon Tyne, UK
-- From: Bishop Auckland, County Durham
-- Open to: Front-end roles, full-stack positions, remote or hybrid
-- Email: lukesimo7@yahoo.com
-- GitHub: github.com/lukesimo7
-- LinkedIn: linkedin.com/in/lukesimpson04/
-- Personal trait: Product mindset — always asks "what does the user actually need?"
+const KB = [
+  // ── GREETINGS ──
+  {
+    keys: ['hi','hey','hello','yo','sup','hiya','howdy','morning','afternoon','evening','whats up',"what's up"],
+    reply: "Hey there! I'm Luke's portfolio assistant. Ask me about his <strong>skills</strong>, <strong>projects</strong>, <strong>experience</strong>, or <strong>education</strong> — or how to get in touch!"
+  },
 
-SKILLS & TECHNOLOGIES:
-Frontend: HTML5, CSS3, JavaScript, TypeScript, React, Vue, Next.js, Nuxt.js
-Backend: PHP, Python, MySQL, REST APIs
-Tools: Git & CI/CD, Figma, Umbraco CMS, Netlify, Google Sheets API
-Specialties: Accessibility (WCAG), responsive design, design systems, UX research, API integration
+  // ── ABOUT / WHO ──
+  {
+    keys: ['who is','who are','about luke','about him','tell me about','introduce','summary','overview','describe','background'],
+    reply: "Luke is a <strong>Front-End Web Developer</strong> based in Newcastle, UK. He builds fast, accessible, pixel-perfect web experiences with broad knowledge across the full stack. He currently works at Newcastle University Students' Union and graduated from Newcastle University with a 2:1 in Computer Science."
+  },
 
-CURRENT ROLE:
-Digital & Front-End Developer at Newcastle University Students' Union (Jul 2025 – Present)
-- Designs and maintains large-scale sections of the SU website inside a PHP-based CMS (Umbraco)
-- Delivers accessible, data-driven features across Support & Advice Hub, Volunteering, and Discover Newcastle sections
-- Enhances performance, usability, and brand consistency
-- Owns features end-to-end from development through release
-- Collaborates closely with product, design, and content teams
-- Production sites used by thousands of students daily
-- Tech: PHP, HTML/CSS, JavaScript, React, API Integration, Accessibility, CMS
+  // ── SKILLS / TECH STACK ──
+  {
+    keys: ['skill','tech','stack','technolog','language','framework','tools','what can he','what does he know','proficien','capabilit','best skill','strongest','good at','specialit'],
+    reply: "Luke's core stack spans: <strong>Frontend</strong> — HTML5, CSS3, JavaScript, TypeScript, React, Vue, Next.js, Nuxt.js. <strong>Backend</strong> — PHP, Python, MySQL, REST APIs. <strong>Tools</strong> — Git & CI/CD, Figma, Umbraco CMS, Netlify. He specialises in <strong>accessibility</strong>, responsive design, and UX research."
+  },
 
-PREVIOUS ROLES:
-- Back of House Team Member, Nando's, Newcastle (Apr 2023 – Jun 2025): Fast-paced kitchen. Strict quality/consistency standards. Developed attention to detail, time management under pressure, clear team communication.
-- Customer Service Assistant, Asda, Bishop Auckland (Mar 2021 – Jan 2022): High-volume retail, checkout and shop floor. Communication, adaptability, customer-first mindset.
+  // ── CURRENT JOB / NUSU ──
+  {
+    keys: ['current','job','work','employ','nusu','student','union','what does he do','where does he work','role','position','occupation'],
+    reply: "Luke is a <strong>Digital & Front-End Developer at Newcastle University Students' Union</strong> (Jul 2025 – present). He designs and maintains large-scale website sections inside a PHP-based CMS (Umbraco), delivering accessible features across the Support & Advice Hub, Volunteering, and Discover Newcastle sections. He owns features end-to-end and collaborates with product, design, and content teams."
+  },
 
-EDUCATION:
-BSc Computer Science — 2:1, Newcastle University (2022–2025)
-Dissertation: Human-centred UX research project — 52 participants, think-aloud evaluations, heuristic reviews — resulting in a high-fidelity Figma prototype for a redesigned sleep-tracking app called "Nest".
+  // ── EXPERIENCE (general) ──
+  {
+    keys: ['experience','career','history','past job','previous','resume','cv','worked'],
+    reply: "Luke's experience includes: <strong>Digital & Front-End Developer</strong> at Newcastle University Students' Union (Jul 2025 – present), <strong>Back of House Team Member</strong> at Nando's, Newcastle (Apr 2023 – Jun 2025), and <strong>Customer Service Assistant</strong> at Asda, Bishop Auckland (Mar 2021 – Jan 2022). Each role built transferable skills like attention to detail, time management, and team communication."
+  },
 
-PROJECTS:
-1. Bishop Auckland Art Nostalgia (FEATURED, Live at bishopaucklandartnostalgia.com)
-   Full art portfolio website for his father's painting hobby. Responsive image gallery, custom commission form with Google Sheets integration, contact integration, visual storytelling, payment iconography, fully accessible. No framework — pure HTML, CSS, JS. Full front-end lifecycle: Figma design, semantic HTML, hand-crafted CSS, progressive enhancement, real-world form handling. Tech: HTML5, CSS3, JavaScript, Google Sheets API, Figma, Accessibility, Responsive Design.
+  // ── NANDOS ──
+  {
+    keys: ["nando","kitchen","back of house"],
+    reply: "Luke worked as a <strong>Back of House Team Member at Nando's</strong> in Newcastle (Apr 2023 – Jun 2025). It was a fast-paced kitchen environment with strict quality standards, where he developed strong attention to detail, time management under pressure, and clear team communication — skills that translate directly to shipping reliable software."
+  },
 
-2. Nest — Sleep App Redesign (UX Research Dissertation)
-   Human-centred UX study with 52 participants. Surveys, user interviews, personas, journey maps, high-fidelity Figma prototype. Guided by Schneiderman's Golden Rules, Hick's Law, Fitts' Law, Miller's Law. Evaluated with heuristic review and think-aloud walkthroughs. Tech: Figma, UX Research, Prototyping, HCI, User Testing.
+  // ── ASDA ──
+  {
+    keys: ['asda','retail','customer service','shop'],
+    reply: "Luke worked as a <strong>Customer Service Assistant at Asda</strong> in Bishop Auckland (Mar 2021 – Jan 2022). The high-volume retail environment built his communication, adaptability, and customer-first mindset — which carries through to how he thinks about user experience today."
+  },
 
-3. Collaborative UX Storyboarding Tool (Team Project)
-   Real-time collaborative storyboarding tool for UX designers, HCI practitioners, students. Template libraries, customisable assets, group editing. Informed by user research, Hierarchical Task Analysis, heuristic evaluation. Tech: Figma, UX Design, HTA, Usability Testing.
+  // ── EDUCATION / UNI ──
+  {
+    keys: ['education','universit','degree','stud','graduat','bsc','computer science','newcastle uni','qualification','academic'],
+    reply: "Luke graduated from <strong>Newcastle University</strong> in 2025 with a <strong>2:1 BSc in Computer Science</strong>. His final-year dissertation was a human-centred UX research project with 52 participants — think-aloud evaluations, heuristic reviews — resulting in a high-fidelity Figma prototype for a redesigned sleep-tracking app called Nest."
+  },
 
-4. AI UX Critique Tool (Personal Project)
-   Upload a UI screenshot, get instant structured heuristic evaluation powered by Claude. Analyses against Nielsen's 10 Usability Heuristics, flags issues by severity (critical/major/minor), surfaces actionable recommendations. Bridges UX research background with AI integration. Multimodal vision input, structured JSON outputs, clean React interface. Tech: React, TypeScript, Claude API, Multimodal AI, UX Heuristics, REST APIs.
+  // ── DISSERTATION / NEST ──
+  {
+    keys: ['dissertation','thesis','nest','sleep','research project','ux research','heuristic','think-aloud','think aloud'],
+    reply: "Luke's dissertation was <strong>Nest — a Sleep App Redesign</strong>. It was a human-centred UX study with 52 participants involving surveys, user interviews, personas, journey maps, and a high-fidelity Figma prototype. The design was guided by Schneiderman's Golden Rules, Hick's Law, Fitts' Law, and Miller's Law, then evaluated with heuristic reviews and think-aloud walkthroughs."
+  },
 
-5. Ready Fresh Ltd (Client Site, Live at readyfreshltd.co.uk)
-   Business website for a fresh produce supplier in the North East. Responsive multi-section layout, produce showcase, staff section, contact form with Netlify Forms, scrolling marquee. Deployed on Netlify with custom domain. Tech: HTML5, CSS3, JavaScript, Netlify, Netlify Forms, Responsive Design, Client Work.
+  // ── PROJECTS (general) ──
+  {
+    keys: ['project','portfolio','built','made','created','developed','shipped','what has he built'],
+    reply: "Luke has 5 key projects: <strong>1.</strong> Bishop Auckland Art Nostalgia — a live art portfolio site (featured). <strong>2.</strong> Nest — a UX research dissertation on sleep app redesign. <strong>3.</strong> Collaborative UX Storyboarding Tool — a team project. <strong>4.</strong> AI UX Critique Tool — a React app powered by the Claude API. <strong>5.</strong> Ready Fresh Ltd — a client business website. Ask about any specific one for more details!"
+  },
 
-WHAT MAKES LUKE STAND OUT:
-- Combines strong front-end craft with UX research knowledge
-- Comfortable across the full stack despite front-end focus
-- Owns features end-to-end in a professional team environment
-- Has shipped real production sites (both personal projects and client work)
-- Academic foundation in HCI and user-centred design
-- Always learning new tools and technologies
----`;
+  // ── BISHOP AUCKLAND ──
+  {
+    keys: ['bishop','auckland','art','nostalgia','father','dad','painting','featured project','gallery','commission'],
+    reply: "Luke's featured project is <strong>Bishop Auckland Art Nostalgia</strong> (<a href='https://bishopaucklandartnostalgia.com/' target='_blank'>live site</a>) — a full art portfolio website built for his father's painting hobby. It features a responsive image gallery, a custom commission form with Google Sheets integration, payment iconography, and a fully accessible interface. Built entirely without frameworks — just HTML, CSS, JS, and Figma."
+  },
 
+  // ── AI UX CRITIQUE TOOL ──
+  {
+    keys: ['ai ux','critique','claude api','nielsen','heuristic evaluation','screenshot','multimodal','ai tool'],
+    reply: "The <strong>AI UX Critique Tool</strong> lets you upload any UI screenshot and receive an instant heuristic evaluation powered by Claude. It analyses interfaces against Nielsen's 10 Usability Heuristics, flagging issues by severity (critical, major, minor) with actionable recommendations. Built with <strong>React, TypeScript, Claude API</strong>, multimodal vision input, and structured JSON outputs."
+  },
+
+  // ── STORYBOARDING TOOL ──
+  {
+    keys: ['storyboard','collaborative','team project','hta','hierarchical task'],
+    reply: "The <strong>Collaborative UX Storyboarding Tool</strong> was a team project — a real-time collaborative tool for UX designers, HCI practitioners, and students. It includes template libraries, customisable assets, and group editing, informed by user research, Hierarchical Task Analysis, and heuristic evaluation."
+  },
+
+  // ── READY FRESH ──
+  {
+    keys: ['ready fresh','produce','supplier','client site','netlify','readyfresh'],
+    reply: "Luke designed and built the website for <strong>Ready Fresh Ltd</strong> (<a href='https://readyfreshltd.co.uk' target='_blank'>live site</a>), a fresh produce supplier in the North East. The site includes a responsive multi-section layout, produce showcase, staff section, contact form with Netlify Forms, and a scrolling marquee. Deployed on Netlify with a custom domain."
+  },
+
+  // ── CONTACT ──
+  {
+    keys: ['contact','email','reach','hire','get in touch','message','connect','linkedin','github','available','opportunit'],
+    reply: "The best way to reach Luke is by email: <a href='mailto:lukesimo7@yahoo.com'>lukesimo7@yahoo.com</a>. You can also find him on <a href='https://www.linkedin.com/in/lukesimpson04/' target='_blank'>LinkedIn</a> and <a href='https://github.com/lukesimo7' target='_blank'>GitHub</a>. He's currently <strong>open to new opportunities</strong> — front-end roles, full-stack positions, remote or hybrid, based in Newcastle."
+  },
+
+  // ── LOCATION ──
+  {
+    keys: ['location','where','based','live','newcastle','city','remote','hybrid','bishop auckland','north east'],
+    reply: "Luke is based in <strong>Newcastle upon Tyne, UK</strong> (originally from Bishop Auckland, County Durham). He's happy working <strong>remote or hybrid</strong>."
+  },
+
+  // ── AVAILABILITY / HIRING ──
+  {
+    keys: ['hire','hiring','available','open to','looking for','seeking','freelance','contract','full-time','part-time','job','interested'],
+    reply: "Yes! Luke is currently <strong>open to new opportunities</strong> — front-end roles, full-stack positions, or anything where great UI and clean code are equally valued. He's a fast learner, happy remote or hybrid, based in Newcastle. Email him at <a href='mailto:lukesimo7@yahoo.com'>lukesimo7@yahoo.com</a>."
+  },
+
+  // ── UX / DESIGN ──
+  {
+    keys: ['ux','user experience','design','figma','accessibility','wcag','a11y','usability','user research','interface','ui'],
+    reply: "Luke has strong UX foundations — his dissertation was a full human-centred UX research project. He's skilled in <strong>Figma</strong>, user research, prototyping, heuristic evaluation, and <strong>accessibility (WCAG)</strong>. He approaches every project with a product mindset: what does the user actually need?"
+  },
+
+  // ── REACT / FRONTEND FRAMEWORKS ──
+  {
+    keys: ['react','vue','next','nuxt','typescript','frontend framework','component','spa','single page'],
+    reply: "Luke works with <strong>React, Vue, Next.js, Nuxt.js, and TypeScript</strong>. His AI UX Critique Tool is built with React & TypeScript, and he uses React in his current role at NUSU alongside PHP and API integrations."
+  },
+
+  // ── BACKEND ──
+  {
+    keys: ['backend','back-end','php','python','sql','mysql','database','server','full stack','fullstack','api'],
+    reply: "While Luke's primary focus is front-end, he has solid backend knowledge including <strong>PHP, Python, MySQL, and REST APIs</strong>. In his current role at NUSU, he works inside a PHP-based CMS (Umbraco) and handles API integrations. He also uses Python and SQL for personal projects."
+  },
+
+  // ── WHAT MAKES HIM STAND OUT ──
+  {
+    keys: ['stand out','unique','special','different','why luke','why hire','strength','best','impressive','remarkable'],
+    reply: "What sets Luke apart: he combines <strong>strong front-end craft with genuine UX research knowledge</strong> — not many devs have run a 52-participant user study. He owns features end-to-end in a professional team, has shipped real production sites for clients, and has an academic foundation in HCI. He's always learning and approaches every project with a product mindset."
+  },
+
+  // ── CMS / UMBRACO ──
+  {
+    keys: ['cms','umbraco','content management','wordpress'],
+    reply: "Luke works with <strong>Umbraco CMS</strong> in his current role at Newcastle University Students' Union, where he builds and maintains large-scale website sections inside the PHP-based CMS. He's experienced in CMS templating, content architecture, and delivering features within a managed platform."
+  },
+
+  // ── GIT / DEVOPS ──
+  {
+    keys: ['git','github','version control','ci/cd','deploy','devops','workflow'],
+    reply: "Luke uses <strong>Git & CI/CD</strong> workflows daily. His projects are hosted on <a href='https://github.com/lukesimo7' target='_blank'>GitHub</a>, and he deploys via GitHub Pages and Netlify. In his role at NUSU, he works within structured version control and release processes."
+  },
+
+  // ── CV / DOWNLOAD ──
+  {
+    keys: ['cv','resume','download','pdf','document'],
+    reply: "You can download Luke's full CV from his portfolio — look for the <strong>'Download full CV'</strong> link in the Experience section, or <a href='cv-luke-simpson.pdf'>click here</a>."
+  },
+
+  // ── AGE / PERSONAL ──
+  {
+    keys: ['old','age','birthday','born','hobbies','hobby','fun','free time','personal','interests'],
+    reply: "I don't have details about Luke's personal life beyond his professional profile. For anything personal, the best bet is to reach out to him directly at <a href='mailto:lukesimo7@yahoo.com'>lukesimo7@yahoo.com</a>!"
+  },
+
+  // ── THANKS ──
+  {
+    keys: ['thank','thanks','cheers','ta','appreciate','helpful','great','nice one','cool'],
+    reply: "No worries! If you'd like to get in touch with Luke, drop him an email at <a href='mailto:lukesimo7@yahoo.com'>lukesimo7@yahoo.com</a> or connect on <a href='https://www.linkedin.com/in/lukesimpson04/' target='_blank'>LinkedIn</a>."
+  },
+
+  // ── CHATBOT ITSELF ──
+  {
+    keys: ['who are you','what are you','are you ai','are you a bot','chatbot','how do you work','how does this work'],
+    reply: "I'm a smart assistant built into Luke's portfolio! I know everything on his CV and portfolio — his skills, projects, work experience, education, and contact info. Ask away, or reach out to Luke directly for anything I can't cover."
+  }
+];
+
+/* ── Match engine ── */
+function findBestMatch(input) {
+  const q = input.toLowerCase().replace(/[^a-z0-9\s'-]/g, '');
+  const words = q.split(/\s+/);
+
+  let bestEntry = null;
+  let bestScore = 0;
+
+  for (const entry of KB) {
+    let score = 0;
+    for (const key of entry.keys) {
+      // Full phrase match (strongest signal)
+      if (q.includes(key)) {
+        score += 10 + key.length;
+      }
+      // Individual word overlap
+      const keyWords = key.split(/\s+/);
+      for (const kw of keyWords) {
+        if (kw.length < 3) continue;
+        for (const w of words) {
+          if (w.length < 3) continue;
+          if (w === kw) score += 5;
+          else if (w.startsWith(kw) || kw.startsWith(w)) score += 3;
+        }
+      }
+    }
+    if (score > bestScore) {
+      bestScore = score;
+      bestEntry = entry;
+    }
+  }
+
+  if (bestScore >= 5) return bestEntry.reply;
+
+  return "Hmm, I'm not sure about that one! Try asking about Luke's <strong>skills</strong>, <strong>projects</strong>, <strong>experience</strong>, or <strong>education</strong>. Or email him directly at <a href='mailto:lukesimo7@yahoo.com'>lukesimo7@yahoo.com</a> — he'd be happy to chat.";
+}
+
+/* ── Chat UI wiring ── */
 const chatToggle = document.getElementById('chatToggle');
 const chatWindow = document.getElementById('chatWindow');
 const chatMessages = document.getElementById('chatMessages');
 const chatInput = document.getElementById('chatInput');
 const chatSend = document.getElementById('chatSend');
 const suggestionsEl = document.getElementById('suggestions');
-
-let conversationHistory = [];
-let isLoading = false;
 
 chatToggle.addEventListener('click', () => {
   const isOpen = chatWindow.classList.toggle('open');
@@ -1447,7 +1588,7 @@ chatSend.addEventListener('click', () => sendMessage(chatInput.value));
 
 function sendMessage(text) {
   text = text.trim();
-  if (!text || isLoading) return;
+  if (!text) return;
 
   if (suggestionsEl) suggestionsEl.style.display = 'none';
 
@@ -1455,8 +1596,14 @@ function sendMessage(text) {
   chatInput.value = '';
   chatInput.focus();
 
-  conversationHistory.push({ role: 'user', content: text });
-  callClaude();
+  // Simulate a brief "thinking" delay for a natural feel
+  showTyping();
+  const delay = 400 + Math.random() * 500;
+  setTimeout(() => {
+    hideTyping();
+    const reply = findBestMatch(text);
+    appendMsg(reply, 'bot');
+  }, delay);
 }
 
 function appendMsg(html, type) {
@@ -1465,7 +1612,6 @@ function appendMsg(html, type) {
   div.innerHTML = html;
   chatMessages.appendChild(div);
   chatMessages.scrollTop = chatMessages.scrollHeight;
-  return div;
 }
 
 function showTyping() {
@@ -1479,50 +1625,6 @@ function showTyping() {
 function hideTyping() {
   const el = document.getElementById('typing-indicator');
   if (el) el.remove();
-}
-
-async function callClaude() {
-  isLoading = true;
-  chatSend.disabled = true;
-  showTyping();
-
-  try {
-    const res = await fetch('https://api.anthropic.com/v1/messages', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        model: 'claude-sonnet-4-20250514',
-        max_tokens: 1000,
-        system: LUKE_CONTEXT,
-        messages: conversationHistory
-      })
-    });
-
-    const data = await res.json();
-    hideTyping();
-
-    if (data.content && data.content.length > 0) {
-      const reply = data.content
-        .filter(b => b.type === 'text')
-        .map(b => b.text)
-        .join('\n');
-
-      const formatted = reply
-        .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
-        .replace(/\n/g, '<br/>');
-
-      appendMsg(formatted, 'bot');
-      conversationHistory.push({ role: 'assistant', content: reply });
-    } else if (data.error) {
-      appendMsg(`Sorry, I hit an error: ${data.error.message}. Try again in a moment.`, 'bot');
-    }
-  } catch (err) {
-    hideTyping();
-    appendMsg("Sorry, I couldn't connect right now. Please try again or email Luke directly at <a href='mailto:lukesimo7@yahoo.com'>lukesimo7@yahoo.com</a>.", 'bot');
-  }
-
-  isLoading = false;
-  chatSend.disabled = false;
 }
 </script>
 
