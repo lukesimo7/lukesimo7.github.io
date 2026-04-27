@@ -250,170 +250,7 @@
     }
 
     /* ═══════════════════════════════════════════════
-       FEATURED PROJECT
-    ═══════════════════════════════════════════════ */
-    .featured-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      overflow: hidden;
-      transition: border-color 0.25s, box-shadow 0.25s;
-      margin-bottom: 1.5rem;
-    }
-    .featured-card:hover {
-      border-color: var(--border-hi);
-      box-shadow: 0 8px 48px rgba(0,0,0,0.5), 0 0 0 1px rgba(99,202,183,0.06);
-    }
-
-    .featured-img {
-      width: 100%;
-      height: 220px;
-      background: linear-gradient(135deg, #0f2027 0%, #1a3040 50%, #0f2027 100%);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .browser-chrome {
-      position: absolute;
-      inset: 16px;
-      background: rgba(13,17,23,0.8);
-      border-radius: 8px;
-      border: 1px solid rgba(255,255,255,0.08);
-      overflow: hidden;
-    }
-
-    .browser-bar {
-      height: 28px;
-      background: rgba(255,255,255,0.04);
-      border-bottom: 1px solid rgba(255,255,255,0.05);
-      display: flex;
-      align-items: center;
-      padding: 0 10px;
-      gap: 5px;
-    }
-
-    .b-dot { width: 7px; height: 7px; border-radius: 50%; }
-    .b-dot:nth-child(1) { background: #ff5f57; }
-    .b-dot:nth-child(2) { background: #febc2e; }
-    .b-dot:nth-child(3) { background: #28c840; }
-
-    .browser-url {
-      margin-left: 10px;
-      background: rgba(255,255,255,0.06);
-      border-radius: 3px;
-      padding: 2px 10px;
-      font-family: var(--font-mono);
-      font-size: 0.6rem;
-      color: var(--text-lo);
-      flex: 1;
-    }
-
-    .browser-content {
-      padding: 14px;
-      display: flex;
-      flex-direction: column;
-      gap: 7px;
-    }
-
-    .bc-line { height: 7px; border-radius: 3px; background: rgba(99,202,183,0.15); }
-    .bc-line.short  { width: 45%; }
-    .bc-line.medium { width: 70%; }
-    .bc-line.long   { width: 90%; }
-    .bc-line.accent { background: rgba(99,202,183,0.35); width: 30%; }
-
-    .bc-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      gap: 7px;
-      margin-top: 4px;
-    }
-    .bc-img {
-      height: 48px;
-      border-radius: 5px;
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.06);
-    }
-
-    .featured-badge {
-      position: absolute;
-      top: 12px;
-      right: 12px;
-      font-family: var(--font-mono);
-      font-size: 0.58rem;
-      color: var(--green);
-      background: rgba(99,202,183,0.12);
-      border: 1px solid var(--border-hi);
-      padding: 0.2rem 0.6rem;
-      border-radius: 3px;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-    }
-
-    .featured-body { padding: 1.75rem; }
-
-    .featured-kicker {
-      font-family: var(--font-mono);
-      font-size: 0.62rem;
-      color: var(--green);
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      margin-bottom: 0.5rem;
-    }
-
-    .featured-title {
-      font-size: 1.25rem;
-      font-weight: 700;
-      color: var(--text-hi);
-      margin-bottom: 0.75rem;
-      letter-spacing: -0.01em;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-
-    .featured-title a {
-      color: var(--text-hi);
-      transition: color 0.2s;
-      display: flex;
-      align-items: center;
-      gap: 0.4rem;
-    }
-    .featured-title a:hover { color: var(--green); }
-    .featured-title a svg {
-      width: 14px; height: 14px;
-      opacity: 0.5;
-      transition: opacity 0.2s, transform 0.2s;
-    }
-    .featured-title a:hover svg {
-      opacity: 1;
-      transform: translate(2px, -2px);
-    }
-
-    .featured-desc {
-      font-size: 0.88rem;
-      color: var(--text);
-      line-height: 1.9;
-      margin-bottom: 1.25rem;
-    }
-
-    .feat-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
-
-    .feat-tag {
-      font-family: var(--font-mono);
-      font-size: 0.6rem;
-      color: var(--green);
-      background: var(--green-soft);
-      border: 1px solid var(--border-hi);
-      padding: 0.18rem 0.55rem;
-      border-radius: 3px;
-      letter-spacing: 0.04em;
-    }
-
-    /* ═══════════════════════════════════════════════
-       OTHER PROJECT CARDS
+       PROJECT CARDS
     ═══════════════════════════════════════════════ */
     .proj-list { display: flex; flex-direction: column; gap: 0.4rem; }
 
@@ -456,6 +293,13 @@
       transition: color 0.2s;
     }
     .proj-card:hover .proj-title { color: var(--green); }
+
+    .proj-title a {
+      color: inherit;
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
 
     .proj-arrow {
       font-size: 0.7rem;
@@ -1031,76 +875,46 @@
     <section id="projects" class="sect">
       <div class="sect-label"><span>Projects</span></div>
 
-      <div class="featured-card reveal">
-        <div class="featured-img">
-          <div class="browser-chrome">
-            <div class="browser-bar">
-              <span class="b-dot"></span>
-              <span class="b-dot"></span>
-              <span class="b-dot"></span>
-              <div class="browser-url">bishopaucklandartnostalgia.com</div>
-            </div>
-            <div class="browser-content">
-              <div class="bc-line accent"></div>
-              <div class="bc-line long"></div>
-              <div class="bc-line medium"></div>
-              <div class="bc-line short"></div>
-              <div class="bc-grid">
-                <div class="bc-img"></div>
-                <div class="bc-img"></div>
-                <div class="bc-img"></div>
-              </div>
-              <div class="bc-line medium"></div>
-              <div class="bc-line short"></div>
-            </div>
-          </div>
-          <span class="featured-badge">Featured Project</span>
-        </div>
-        <div class="featured-body">
-          <div class="featured-kicker">Live site · Personal project</div>
-          <div class="featured-title">
-            <a href="https://bishopaucklandartnostalgia.com/" target="_blank">
-              Bishop Auckland Art Nostalgia
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-            </a>
-          </div>
-          <p class="featured-desc">
-            Designed and developed a full art portfolio website for my father's painting hobby from scratch. The site features a responsive image gallery, a custom commission request form with Google Sheets integration for submissions, contact integration, visual storytelling, payment iconography, and a fully accessible interface. Built with a focus on community engagement and showcasing local art.
-          </p>
-          <p class="featured-desc" style="margin-top:-0.4rem;">
-            This project covers the full front-end lifecycle: design decisions in Figma, semantic HTML, hand-crafted CSS, progressive enhancement, and real-world form handling — without a framework in sight.
-          </p>
-          <div class="feat-tags">
-            <span class="feat-tag">HTML5</span>
-            <span class="feat-tag">CSS3</span>
-            <span class="feat-tag">JavaScript</span>
-            <span class="feat-tag">Google Sheets API</span>
-            <span class="feat-tag">Figma</span>
-            <span class="feat-tag">Accessibility</span>
-            <span class="feat-tag">Responsive Design</span>
-          </div>
-        </div>
-      </div>
-
       <div class="proj-list">
 
-        <div class="proj-card reveal">
-          <div class="proj-num">UX&nbsp;Research<br/>Dissertation</div>
+        <a href="https://bishopaucklandartnostalgia.com/" target="_blank" class="proj-card reveal">
+          <div class="proj-num">Live&nbsp;Site<br/>Personal project</div>
           <div>
             <div class="proj-title">
-              Nest — Sleep App Redesign
+              Bishop Auckland Art Nostalgia
               <span class="proj-arrow">↗</span>
             </div>
-            <p class="proj-desc">Human-centred UX study with 52 participants. Surveys, user interviews, personas, journey maps, and a high-fidelity Figma prototype guided by Schneiderman's Golden Rules, Hicks' Law, Fitts' Law, and Miller's Law. Evaluated with heuristic review and think-aloud walkthroughs.</p>
+            <p class="proj-desc">Designed and developed a full art portfolio website for my father's painting hobby from scratch. Features a responsive image gallery, a custom commission request form with Google Sheets integration, contact integration, visual storytelling, and a fully accessible interface — built without a framework in sight.</p>
             <div class="proj-tags">
+              <span class="proj-tag">HTML5</span>
+              <span class="proj-tag">CSS3</span>
+              <span class="proj-tag">JavaScript</span>
+              <span class="proj-tag">Google Sheets API</span>
               <span class="proj-tag">Figma</span>
-              <span class="proj-tag">UX Research</span>
-              <span class="proj-tag">Prototyping</span>
-              <span class="proj-tag">HCI</span>
-              <span class="proj-tag">User Testing</span>
+              <span class="proj-tag">Accessibility</span>
+              <span class="proj-tag">Responsive Design</span>
             </div>
           </div>
-        </div>
+        </a>
+
+        <a href="https://skybid.co.uk" target="_blank" class="proj-card reveal">
+          <div class="proj-num">Live&nbsp;Site<br/>Personal project</div>
+          <div>
+            <div class="proj-title">
+              SkyBid
+              <span class="proj-arrow">↗</span>
+            </div>
+            <p class="proj-desc">A live multi-seller auction marketplace for racing pigeons. Sellers list birds, buyers place real-time bids, and the platform handles the full transaction via Stripe. Built with DEFRA compliance in mind, navigating UK regulations around buying and selling live birds.</p>
+            <div class="proj-tags">
+              <span class="proj-tag">Next.js</span>
+              <span class="proj-tag">Node / Express</span>
+              <span class="proj-tag">PostgreSQL</span>
+              <span class="proj-tag">Socket.io</span>
+              <span class="proj-tag">Stripe</span>
+              <span class="proj-tag">DEFRA Compliance</span>
+            </div>
+          </div>
+        </a>
 
         <div class="proj-card reveal">
           <div class="proj-num">UX&nbsp;Tool<br/>Team project</div>
@@ -1115,26 +929,6 @@
               <span class="proj-tag">UX Design</span>
               <span class="proj-tag">HTA</span>
               <span class="proj-tag">Usability Testing</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="proj-card reveal">
-          <div class="proj-num">AI&nbsp;Web&nbsp;App<br/>Personal project</div>
-          <div>
-            <div class="proj-title">
-              AI UX Critique Tool
-              <span class="proj-arrow">↗</span>
-            </div>
-            <p class="proj-desc">Upload any UI screenshot and receive an instant, structured heuristic evaluation powered by Claude. The tool analyses interfaces against Nielsen's 10 Usability Heuristics — flagging issues by severity (critical, major, minor) and surfacing actionable recommendations for each finding.</p>
-            <p class="proj-desc">Built to bridge my UX research background with hands-on AI integration. Combines multimodal vision input, structured JSON outputs from the Claude API, and a clean React interface designed around the critique workflow itself.</p>
-            <div class="proj-tags">
-              <span class="proj-tag">React</span>
-              <span class="proj-tag">TypeScript</span>
-              <span class="proj-tag">Claude API</span>
-              <span class="proj-tag">Multimodal AI</span>
-              <span class="proj-tag">UX Heuristics</span>
-              <span class="proj-tag">REST APIs</span>
             </div>
           </div>
         </div>
@@ -1350,9 +1144,6 @@ sections.forEach(s => navIO.observe(s));
 
 
 /* ═══════════════════════════════════════════════
-   AI CHATBOT ENGINE
-═══════════════════════════════════════════════ */
-/* ═══════════════════════════════════════════════
    OFFLINE KNOWLEDGE-BASE CHATBOT
    No API key needed — works on GitHub Pages
 ═══════════════════════════════════════════════ */
@@ -1403,31 +1194,31 @@ const KB = [
   // ── EDUCATION / UNI ──
   {
     keys: ['education','universit','degree','stud','graduat','bsc','computer science','newcastle uni','qualification','academic'],
-    reply: "Luke graduated from <strong>Newcastle University</strong> in 2025 with a <strong>2:1 BSc in Computer Science</strong>. His final-year dissertation was a human-centred UX research project with 52 participants — think-aloud evaluations, heuristic reviews — resulting in a high-fidelity Figma prototype for a redesigned sleep-tracking app called Nest."
+    reply: "Luke graduated from <strong>Newcastle University</strong> in 2025 with a <strong>2:1 BSc in Computer Science</strong>. His final-year dissertation was a human-centred UX research project with 52 participants — think-aloud evaluations, heuristic reviews — resulting in a high-fidelity Figma prototype for a redesigned sleep-tracking app."
   },
 
-  // ── DISSERTATION / NEST ──
+  // ── DISSERTATION ──
   {
-    keys: ['dissertation','thesis','nest','sleep','research project','ux research','heuristic','think-aloud','think aloud'],
-    reply: "Luke's dissertation was <strong>Nest — a Sleep App Redesign</strong>. It was a human-centred UX study with 52 participants involving surveys, user interviews, personas, journey maps, and a high-fidelity Figma prototype. The design was guided by Schneiderman's Golden Rules, Hick's Law, Fitts' Law, and Miller's Law, then evaluated with heuristic reviews and think-aloud walkthroughs."
+    keys: ['dissertation','thesis','sleep','research project','ux research','heuristic','think-aloud','think aloud'],
+    reply: "Luke's dissertation was a human-centred UX study with 52 participants, involving surveys, user interviews, personas, journey maps, and a high-fidelity Figma prototype for a redesigned sleep-tracking app. The design was guided by Schneiderman's Golden Rules, Hick's Law, Fitts' Law, and Miller's Law, then evaluated with heuristic reviews and think-aloud walkthroughs."
   },
 
   // ── PROJECTS (general) ──
   {
     keys: ['project','portfolio','built','made','created','developed','shipped','what has he built'],
-    reply: "Luke has 5 key projects: <strong>1.</strong> Bishop Auckland Art Nostalgia — a live art portfolio site (featured). <strong>2.</strong> Nest — a UX research dissertation on sleep app redesign. <strong>3.</strong> Collaborative UX Storyboarding Tool — a team project. <strong>4.</strong> AI UX Critique Tool — a React app powered by the Claude API. <strong>5.</strong> Ready Fresh Ltd — a client business website. Ask about any specific one for more details!"
+    reply: "Luke has 4 key projects: <strong>1.</strong> Bishop Auckland Art Nostalgia — a live art portfolio site. <strong>2.</strong> SkyBid — a live multi-seller pigeon auction marketplace. <strong>3.</strong> Collaborative UX Storyboarding Tool — a team project. <strong>4.</strong> Ready Fresh Ltd — a live client business website. Ask about any specific one for more details!"
   },
 
   // ── BISHOP AUCKLAND ──
   {
-    keys: ['bishop','auckland','art','nostalgia','father','dad','painting','featured project','gallery','commission'],
-    reply: "Luke's featured project is <strong>Bishop Auckland Art Nostalgia</strong> (<a href='https://bishopaucklandartnostalgia.com/' target='_blank'>live site</a>) — a full art portfolio website built for his father's painting hobby. It features a responsive image gallery, a custom commission form with Google Sheets integration, payment iconography, and a fully accessible interface. Built entirely without frameworks — just HTML, CSS, JS, and Figma."
+    keys: ['bishop','auckland','art','nostalgia','father','dad','painting','gallery','commission'],
+    reply: "Luke built <strong>Bishop Auckland Art Nostalgia</strong> (<a href='https://bishopaucklandartnostalgia.com/' target='_blank'>live site</a>) — a full art portfolio website for his father's painting hobby. It features a responsive image gallery, a custom commission form with Google Sheets integration, payment iconography, and a fully accessible interface. Built entirely without frameworks — just HTML, CSS, JS, and Figma."
   },
 
-  // ── AI UX CRITIQUE TOOL ──
+  // ── SKYBID ──
   {
-    keys: ['ai ux','critique','claude api','nielsen','heuristic evaluation','screenshot','multimodal','ai tool'],
-    reply: "The <strong>AI UX Critique Tool</strong> lets you upload any UI screenshot and receive an instant heuristic evaluation powered by Claude. It analyses interfaces against Nielsen's 10 Usability Heuristics, flagging issues by severity (critical, major, minor) with actionable recommendations. Built with <strong>React, TypeScript, Claude API</strong>, multimodal vision input, and structured JSON outputs."
+    keys: ['skybid','sky bid','pigeon','auction','bid','pigeon auction','marketplace','defra'],
+    reply: "Luke built <strong>SkyBid</strong> (<a href='https://skybid.co.uk' target='_blank'>skybid.co.uk</a>) — a live multi-seller auction marketplace for racing pigeons. Sellers list birds, buyers place real-time bids, and the platform handles full transactions via Stripe. Built with <strong>Next.js, Node/Express, PostgreSQL, and Socket.io</strong>, with DEFRA compliance considerations baked in for buying and selling live birds in the UK."
   },
 
   // ── STORYBOARDING TOOL ──
@@ -1469,13 +1260,13 @@ const KB = [
   // ── REACT / FRONTEND FRAMEWORKS ──
   {
     keys: ['react','vue','next','nuxt','typescript','frontend framework','component','spa','single page'],
-    reply: "Luke works with <strong>React, Vue, Next.js, Nuxt.js, and TypeScript</strong>. His AI UX Critique Tool is built with React & TypeScript, and he uses React in his current role at NUSU alongside PHP and API integrations."
+    reply: "Luke works with <strong>React, Vue, Next.js, Nuxt.js, and TypeScript</strong>. SkyBid is built with Next.js, and he uses React in his current role at NUSU alongside PHP and API integrations."
   },
 
   // ── BACKEND ──
   {
     keys: ['backend','back-end','php','python','sql','mysql','database','server','full stack','fullstack','api'],
-    reply: "While Luke's primary focus is front-end, he has solid backend knowledge including <strong>PHP, Python, MySQL, and REST APIs</strong>. In his current role at NUSU, he works inside a PHP-based CMS (Umbraco) and handles API integrations. He also uses Python and SQL for personal projects."
+    reply: "While Luke's primary focus is front-end, he has solid backend knowledge including <strong>PHP, Python, MySQL, and REST APIs</strong>. In his current role at NUSU, he works inside a PHP-based CMS (Umbraco) and handles API integrations. SkyBid uses Node/Express and PostgreSQL on the backend."
   },
 
   // ── WHAT MAKES HIM STAND OUT ──
@@ -1532,11 +1323,9 @@ function findBestMatch(input) {
   for (const entry of KB) {
     let score = 0;
     for (const key of entry.keys) {
-      // Full phrase match (strongest signal)
       if (q.includes(key)) {
         score += 10 + key.length;
       }
-      // Individual word overlap
       const keyWords = key.split(/\s+/);
       for (const kw of keyWords) {
         if (kw.length < 3) continue;
@@ -1596,7 +1385,6 @@ function sendMessage(text) {
   chatInput.value = '';
   chatInput.focus();
 
-  // Simulate a brief "thinking" delay for a natural feel
   showTyping();
   const delay = 400 + Math.random() * 500;
   setTimeout(() => {
